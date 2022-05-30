@@ -1,8 +1,8 @@
 from flask import Flask
 from datetime import datetime
-mi_super_duper_aplicacion = Flask(__name__)
+app = Flask(__name__)
 
-@mi_super_duper_aplicacion.route('/')
+@app.route('/')
 def homepage():
     the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
 
@@ -13,7 +13,7 @@ def homepage():
     <p>Adios Goodjob :)</p>
     """.format(time=the_time)
 
-@mi_super_duper_aplicacion.route('/secreto')
+@app.route('/secreto')
 def homepage_secreto():
     the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
 
@@ -25,5 +25,5 @@ def homepage_secreto():
     """.format(time=the_time)
 
 if __name__ == '__main__':
-    mi_super_duper_aplicacion.run(debug=True, use_reloader=True)
+    app.run(debug=True, use_reloader=True)
 
